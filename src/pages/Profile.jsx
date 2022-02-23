@@ -33,7 +33,7 @@ function Profile() {
         await updateDoc(userRef,{
           name
         })
-        toast.success('🦄 Wow so easy!', {
+        toast.success('🦄 Saved!', {
           position: "top-right",
           autoClose: 10000,
           hideProgressBar: false,
