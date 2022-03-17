@@ -5,7 +5,7 @@ import Spinner from '../components/Spinner'
 
 function CreateListing() {
     const [geolocationEnabaled,setGeolocationEnabled] = useState(true)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [formData,setFormData] = useState({
         type: 'rent',
         name: '',
@@ -18,13 +18,13 @@ function CreateListing() {
         regularPrice:'0',
         discountedPrice:'0',
         images: {},
-        latitude:'0',
-        longitude:'0',
+        latitude:0,
+        longitude:0,
 
     })
 
     const auth = getAuth()
-    const navigate =useNavigate()
+    const navigate = useNavigate()
     const isMounted = useRef(true)
 
     useEffect(()=> {
@@ -44,6 +44,7 @@ function CreateListing() {
         return ()  =>{
             isMounted.current = false
         }
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     },[isMounted])
 
 
