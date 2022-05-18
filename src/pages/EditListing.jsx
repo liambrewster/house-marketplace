@@ -9,6 +9,7 @@ import Spinner from '../components/Spinner'
 import {toast} from 'react-toastify'
 
 function EditListing() {
+    // eslint-disable-next-line
     const [geolocationEnabled,setGeolocationEnabled] = useState(true)
     const [loading, setLoading] = useState(false)
     const [listing, setListing] = useState(false)
@@ -56,7 +57,7 @@ function EditListing() {
                 navigate('/profile')
                 toast.error('You do not have permission to edit this listing')
             }
-        },[])
+        })
 
         // This is to get the listing data
     useEffect(() => {
